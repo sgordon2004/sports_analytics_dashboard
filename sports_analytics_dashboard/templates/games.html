@@ -11,7 +11,9 @@
         {% for game in games %}
             <li>
                 {{ game["away_team"] }} @ {{ game["home_team"]}} at {{ game["game_time"]}}
-                <strong>Predicted Winner:</strong> {{ game["predicted_winner"] }}
+                <strong>Win Probability:</strong><br>
+                {{ game["away_team"] }}: {{ game["win_probabilities"][game["away_team"]] }}<br>
+                {{ game["home_team"] }}: {{ game["win_probabilities"][game["home_team"]] }}
             </li>
         {% endfor %}
     </ul>
